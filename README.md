@@ -12,14 +12,15 @@ can be used to:
 
 | CONFIG_NAME        | DESCRIPTION           | IS_REQUIRED  |DEFAULT_VALUE|
 | -------------------|---------------------|:------------:|:-----------:|
-| CONNECTION_LIST | dict. the list of connection specs the service needs to be able to access Azure Service Bus. See below for schema.| yes | n/a |
+| CONNECTION_LIST | dict of connections the service needs to be able to access Azure Service Bus. See below for schema.| yes | n/a |
 | DEFAULT_IDLE_TIMEOUT |  Default value for 'idle_timeout'. See query params for explanation | no | 30 |
 | DEFAULT_PREFETCH |  Default value for 'prefetch'. See query params for explanation | no | 30 |
 | PORT |  port number for the service to run on | no | 5000 |
 | LOG_LEVEL | log level | no | "INFO" |
 
-CONNECTION_LIST:
-```json{
+schema for CONNECTION_LIST:
+```json
+{
   "<my-connection-key1>": {
     "conn_str": "$SECRET(<my-connection1-string-secret>)"
   }, "<my-connection-key2>": {
